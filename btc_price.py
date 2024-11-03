@@ -7,4 +7,6 @@ response = requests.get(url)
 data = response.json()
 
 USD_price = data['bpi']['USD']['rate']
-USD_price
+
+while True:
+    print(USD_price)
