@@ -7,5 +7,4 @@ data = response.json()
 
 USD_price = data['bpi']['USD']['rate']
 
-while True:
-    print(USD_price)
+
