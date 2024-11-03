@@ -1,14 +1,11 @@
 import requests
-from bs4 import BeautifulSoup
+import pandas as pd
 
-url = "https://exchange.blockchain.com/"
-
+# Step 1: Fetch JSON data from the webpage
+url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 response = requests.get(url)
-html = response.content
+data = response.json()
 
-soup = BeautifulSoup(html, 'html.parser')
-
-btc_price = soup.find('td', {'class': 'PricesTable__PriceCol-p25khh-9 foKaFp'})
-
+USD_price = data['bpi']['USD']['rate']
 
 
